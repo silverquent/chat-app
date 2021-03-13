@@ -1,21 +1,44 @@
 import React from 'react';
 import './Contact.css';
+import PropTypes from 'prop-types';
 
-function Contact() {
-  const online = true;
-  return (
-    <div className="Contact">
-      <img className="avatar" src="https://avatars.githubusercontent.com/u/46708558?s=60&amp;v=4"></img>
-      <div>
-        <h4 className="name">Broly Saiyan</h4>
-        <div className="status">
-          <span className="status-online"> </span>
-          <span className="status-text" > {online ? "Online" : "Offline"}</span>
+function Contact(props) {
+  if (props.status === 'true') {
+    return (
+      <div className="Contact">
+        <img className="avatar" src={props.avatar} alt={props.name}></img>
+        <div>
+          <h4 className="name">{props.name}</h4>
+          <div className="status">
+            <span className="status-online"> </span>
+            <span className="status-text" >{props.text}</span>
+          </div>
+
         </div>
-
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="Contact">
+        <img className="avatar" src={props.avatar} alt={props.name}></img>
+        <div>
+          <h4 className="name">{props.name}</h4>
+          <div className="status">
+            <span className="status-offline"> </span>
+            <span className="status-text" >{props.text}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
+
+Contact.propTypes = {
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+
+};
 
 export default Contact;
