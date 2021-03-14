@@ -8,6 +8,7 @@ const users = [
     avatar: 'https://randomuser.me/api/portraits/men/28.jpg',
     status: false
     
+    
   },
   {
     name: 'Nellie Caldwell',
