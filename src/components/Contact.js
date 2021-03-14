@@ -6,7 +6,7 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      status : props.status
+      status : this.props.status
     }
   }
 
@@ -32,7 +32,7 @@ class Contact extends React.Component {
 Contact.propTypes = {
   name: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired,
 
 
 };

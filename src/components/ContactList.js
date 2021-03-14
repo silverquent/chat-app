@@ -36,7 +36,7 @@ const ContactList = () => (
   <div>
     {users.map(item => (
       
-        <Contact name={item.name} avatar={item.avatar} status={item.status} />
+        <Contact key={item.name} name={item.name} avatar={item.avatar} status={item.status} />
       
     ))}
   </div>
